@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('invited_guests_count');
             $table->enum('status', ['will attend', 'attended', 'not attended']);
+            $table->string('congrats_words')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registered_users');
+        Schema::dropIfExists('posts');
     }
 };
